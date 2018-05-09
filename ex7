@@ -1,0 +1,13 @@
+def palindrom():
+    x = input("Adj meg egy mondatot:")
+    l = []
+    for i in x.split(' '):
+        if i == i[::-1]:
+            l.append(i)
+    min = 0
+    for j in l:
+        if len(j)>min:
+            j=min
+    return j
+
+print(palindrom())
