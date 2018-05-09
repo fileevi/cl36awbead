@@ -1,1 +1,61 @@
+ef tizenhatosszamrendszerbe():
+    if szbol == 11 or szbol == 12 or szbol == 13 or szbol == 14 or szbol == 15 or szbol == 16:
+        n16 = []
+        for i in n:
+            if i == 'A':
+                n16.append('10')
+            elif i == 'B':
+                n16.append('11')
+            elif i == 'C':
+                n16.append('12')
+            elif i == 'D':
+                n16.append('13')
+            elif i == 'E':
+                n16.append('14')
+            elif i == 'F':
+                n16.append('15')
+            else:
+                n16.append(i)
+        s = n16[::-1]
+        m_tiz = 0
+        a = 0
+        for j in s:
+            m_tiz += int(j)*(szbol**a)
+            a += 1
+        return m_tiz
+    else:
+        s = n[::-1]
+        m_tiz = 0
+        j = 0
+        for i in s:
+            m_tiz += int(i)*(szbol**j)
+            j += 1
+        return m_tiz
+
+def to():
+    k = tizenhatosszamrendszerbe()
+    m = ''
+    while True:
+        if k == 0:
+            return m[::-1]
+        if k%szbe==10:
+            m += 'A'
+        elif k%szbe==11:
+            m += 'B'
+        elif k%szbe==12:
+            m += 'C'
+        elif k%szbe==13:
+            m += 'D'
+        elif k%szbe==14:
+            m += 'E'
+        elif k%szbe==15:
+            m += 'F'
+        else:
+            m += str(k%szbe)
+        k = k//szbe
+#MAIN:
+n = input('Szám: ')
+szbol = int(input('Melyik számrendszerből:'))
+szbe = int(input('Melyik számrendszerbe:'))
+print(to())
 
