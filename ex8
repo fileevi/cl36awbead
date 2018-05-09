@@ -1,0 +1,14 @@
+elso = input("Adja meg az első szót: ")
+masodik = input("Adja meg a második szót: ")
+kozos=[]
+for i in range(0,len(elso)):
+    for j in range(0,len(masodik)):
+        if elso[i] == masodik[j] :
+            kozos.append(masodik[j])
+
+vegkozos=""
+for i in kozos:
+    if i not in vegkozos:
+        vegkozos+=i
+
+print(vegkozos)
