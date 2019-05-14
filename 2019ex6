@@ -1,4 +1,16 @@
-def numbersinN:
-    
-#szerintem majd valahogy halmazokkal kell (lab09)
-n<=1000
+import itertools
+
+def numbersinN(n):
+    if int(n)<1000:
+        c = 0
+        for x in itertools.product([0,7,4],repeat = len(n)):
+            s = ' '
+            for i in x:
+                s += str(i)
+            if int(s) < int(n):
+                c += 1
+        return c-1
+    else:
+        return 'Adjon meg 1000nél kisebb számot!'
+
+print(numbersinN(str(999)))
