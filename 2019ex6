@@ -3,7 +3,7 @@ import itertools
 def numbersinN(n):
     if int(n)<1000:
         c = 0
-        for x in itertools.product([0,7,4],repeat = len(n)):
+        for x in itertools.product([0,7,4],repeat = len(n)): #legenerálja az összes ntől kisebb 0,4,7 szjegyeket tart. számokat
             s = ' '
             for i in x:
                 s += str(i)
