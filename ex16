@@ -1,1 +1,44 @@
+ls=[]
 
+
+while True:
+    elem=input('Adj meg egy erteket:')
+    if elem=='0':
+        break
+    elif elem in ls:
+        elem = input('Már volt, adjon meg egy másikat! ')
+        if elem == '0':
+            break
+        ls.append(elem)
+
+    else:
+        ls.append(elem)
+
+
+def ls_rendez():
+    for k in range(0,len(ls)-1):
+        for h in range(k+1,k+2):
+            if ls[k][0]==ls[h][0] and len(ls[k])== len(ls[h]):
+                tmp=ls[k]
+                ls[k]=ls[h]
+                ls[h]=tmp
+    print(ls)
+
+    for i in range(0,len(ls)-1):
+        for j in range(i+1,len(ls)):
+            if ls[i][0]>ls[j][0]:
+                tmp=ls[i]
+                ls[i]=ls[j]
+                ls[j]=tmp
+
+    for k in range(0, len(ls) - 1):
+        for h in range(k + 1, k+2):
+            if ls[k][0] == ls[h][0] and len(ls[k]) < len(ls[h]):
+                tmp = ls[k]
+                ls[k] = ls[h]
+                ls[h] = tmp
+    print(ls)
+
+
+print(ls)
+ls_rendez()
