@@ -9,6 +9,7 @@ def numbersinN(n):
                 s += str(i)
             if int(s) < int(n):
                 c += 1
+                print(s)
         return c-1
     else:
         return 'Adjon meg 1000nél kisebb számot!'
